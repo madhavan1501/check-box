@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:ital,wght@1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;                                                                                  
+    box-sizing: border-box;
+}
+:root{
+    --tick:rgb(19, 100, 19);
+    --wrong:rgb(255, 0, 0);
+    --bc:rgba(19, 100, 19,0.3);
+    --bw:rgba(255, 0, 0,0.3);
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    flex-direction: column;
+}
+.heading{
+    font-size: 80px;
+    color: white;
+    font-weight: 600;
+    word-spacing: 20px;
+    letter-spacing: 5px;
+    width: 0ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 5px solid black;
+    border-radius: 50px;
+    animation: type 4s ease-in-out infinite ;
+    margin-bottom: 20px;
+}
+.heading span{
+    color: black;
+}
+@keyframes type{
+    0%{
+        width: 0ch;
+    }
+    80%{
+        width: 10ch;
+        border-color: white;
+    }
+    100%{
+        width: 0ch;
+
+    }
+}
+.input{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+.input label{
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+}
+.input input[type="checkbox"]{
+    margin: 10px;
+    appearance: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+.input input[type="checkbox"]:checked::before{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+.input .correct:checked::before{
+    content: '\2713';
+    color: var(--tick);
+    background-color: var(--bc);
+}
+.input .wrong:checked::before{
+    content: '\2715';
+    color: var(--wrong);
+    background-color: var(--bw);
+
+}
+.input .correct:checked + label{
+    color:greenyellow 
+}
+.input .wrong:checked + label{
+    color: orangered
+}
+/* end    */
+
+
+
+
